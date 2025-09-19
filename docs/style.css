@@ -2,7 +2,7 @@ main {
   max-width: 800px;
   margin: 2rem auto;
   padding: 1rem 2rem;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -10,7 +10,7 @@ main {
 /* 見出し */
 h2 {
   color: #2c3e50;
-  border-left: 6px solid #3498db;
+  border-left: 6px solid #3692cf;
   padding-left: 0.5rem;
   margin-top: 2rem;
 }
@@ -37,17 +37,18 @@ li {
 
 /* コードブロック */
 pre {
-  background: #f4f6f8;
-  border-left: 4px solid #3498db;
+  background: #ffffff;
+  border-left: 4px solid #73d7df;
   padding: 0.8rem;
   overflow-x: auto;
   border-radius: 6px;
   margin: 1rem 0;
+  box-shadow: 3px 10px 10px rgba(0,0,0,0.3);
 }
 
 code {
   font-family: "Consolas", "Courier New", monospace;
-  color: #e74c3c;
+  color: #9e1000;
   font-size: 0.95em;
 }
 
