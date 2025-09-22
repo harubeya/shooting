@@ -1,5 +1,5 @@
 body {
-  background: #b8b7b7;
+  background: #383838;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,8 +8,8 @@ body {
 }
 
 #gameCanvas {
-  background: #ffffff;
-  border: 2px solid #ffffff;
+  background: #000000;
+  border: 2px solid #000000;
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
   display: block;
 }
