@@ -23,7 +23,12 @@ function tryShoot() {
 
 //fillRect(x座標, y座標, 横幅, 立幅)
 
-
+function updateScore(){
+    const scoreBoard = document.getElementById("scoreBoard");
+    scoreBoard.textContent = `Score: ${player.score}`;
+    const lifeBoard = document.getElementById("lifeBoard");
+    lifeBoard.innerText = `Life: ${player.life}`;
+}
 
 window.addEventListener("keydown", (e) => {
     if(e.key === "ArrowLeft"){
@@ -48,8 +53,10 @@ function update() {
         }
         
     }
+    spawnEnemy(canvas);
     updateEnemies(canvas);
     handleCollisions();
+    updateScore();
 
 }
 

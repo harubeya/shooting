@@ -1,3 +1,5 @@
+const playerImage = new Image();
+playerImage.src = "https://lh3.googleusercontent.com/w-YM0xTncVBJt_oDIK3y7m6TLXMWCwAhRnuceMRjlk4sScKxHz2wKyQ7fq-ePuZETvNajuBhcOW9cd-TUNulhIC-40Mik43rSZGAJ_6mzwBA";
 
 export const player = {
     x: 0,
@@ -5,7 +7,8 @@ export const player = {
     width: 30,
     height: 30,
     color: "#ff00ddff",
-    life: 3,
+    life: 300000000000000,
+    score: 0,
 };
 
 export function initPlayer(canvas) {
@@ -16,5 +19,5 @@ export function initPlayer(canvas) {
 
 export function drowPlayer(ctx) {
     ctx.fillStyle = player.color;
-    ctx.fillRect(player.x, player.y, player.width, player.height);
+    ctx.drawImage(playerImage,    player.x, player.y, player.width, player.height);
 }

@@ -1,18 +1,20 @@
 export const enemies = [];
-const SIZE = 26;
+const SIZE = 200;
+const enemyImage = new Image();
+enemyImage.src = "https://cimg.kgl-systems.io/camion/files/22681/thumbnail_MyAn.jpg?x=1280";
 
 function pushEnemies(canvas) {
     const w = SIZE;
     const h = SIZE;
     const x = Math.random() * (canvas.width - w);
-    const y = 0;
+    const y = -h;
     const vy = 5
 
     enemies.push({x, y, width: w , height: h, vy});
 }
 
 export function spawnEnemy(canvas) {
-    if (enemies.length < 10000000000){
+    if (enemies.length < 1){
         pushEnemies(canvas);
     }
 }
@@ -31,6 +33,6 @@ export function drowEnemies(ctx) {
 
     ctx.fillStyle = "crimson";
     for (const e of enemies){
-        ctx.fillRect(e.x, e.y, e.width, e.height);
+        ctx.drawImage(enemyImage,e.x, e.y, e.width, e.height);
 }
 }
