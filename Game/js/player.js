@@ -1,11 +1,11 @@
 const playerImage = new Image();
-playerImage.src = "https://lh3.googleusercontent.com/w-YM0xTncVBJt_oDIK3y7m6TLXMWCwAhRnuceMRjlk4sScKxHz2wKyQ7fq-ePuZETvNajuBhcOW9cd-TUNulhIC-40Mik43rSZGAJ_6mzwBA";
+playerImage.src = "https://illustkun.com/wp-content/uploads/illustkun-06842-20220814-b.png";
 
 export const player = {
     x: 0,
     y: 0,
-    width: 30,
-    height: 30,
+    width: 80,
+    height: 80  ,
     color: "#ff00ddff",
     life: 300000000000000,
     score: 0,

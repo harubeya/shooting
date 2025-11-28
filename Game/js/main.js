@@ -1,5 +1,5 @@
 import { player , initPlayer ,drowPlayer} from "./player.js";
-import { spawnEnemy , enemies, updateEnemies,drowEnemies} from "./enemies.js";
+import { spawnEnemy , enemies, updateEnemies,drowEnemies, spawnEnemyrate} from "./enemies.js";
 import { handleCollisions } from "./collision.js";
 
 const canvas = document.getElementById("gameCanvas");
@@ -7,11 +7,20 @@ const ctx = canvas.getContext("2d");
 
 initPlayer(canvas);
 
-
 export const bullets = [];
 const BULLET_SPEED = -10;
 
 function tryShoot() {
+    bullets.push({
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vy: BULLET_SPEED,
+    })
+}
+
+function tryShoot_2() {
     bullets.push({
         x: player.x -300 ,
         y: player.y - 110,
@@ -41,7 +50,12 @@ window.addEventListener("keydown", (e) => {
         }
     } else if(e.code === "Space"){
         tryShoot();
-    }      
+
+    } else if(e.key === "z"){
+        tryShoot_2();
+    } else if(e.key === "a"){
+        spawnEnemyrate += 1;
+    }     
 });
 
 function update() {
@@ -74,9 +88,6 @@ function draw() {
     }
 
     drowEnemies(ctx);
-
-    spawnEnemy(canvas);
-
  
 }
 

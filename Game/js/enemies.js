@@ -1,7 +1,8 @@
 export const enemies = [];
 const SIZE = 200;
 const enemyImage = new Image();
-enemyImage.src = "https://cimg.kgl-systems.io/camion/files/22681/thumbnail_MyAn.jpg?x=1280";
+export const spawnEnemyrate = 1;
+enemyImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Carboxylic-acid-group-3D.png/250px-Carboxylic-acid-group-3D.png";
 
 function pushEnemies(canvas) {
     const w = SIZE;
@@ -14,7 +15,7 @@ function pushEnemies(canvas) {
 }
 
 export function spawnEnemy(canvas) {
-    if (enemies.length < 1){
+    if (enemies.length < spawnEnemyrate) {
         pushEnemies(canvas);
     }
 }
