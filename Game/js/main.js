@@ -16,6 +16,105 @@ function tryShoot() {
         y: player.y - 45,
         width: 10,
         height: 10,
+        vx: 0,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 3,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 5,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 7,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 10,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 13,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 1.5,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 2,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: -3,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: -5,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: -10,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: -7,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: -13,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: -1.5,
+        vy: BULLET_SPEED,
+    },{
+        x: player.x  + 45 ,
+        y: player.y - 45,
+        width: 10,
+        height: 10,
+        vx: 2,
         vy: BULLET_SPEED,
     })
 }
@@ -26,6 +125,7 @@ function tryShoot_2() {
         y: player.y - 110,
         width: 630,
         height: 100,
+        vx: 0,
         vy: BULLET_SPEED,
     })
 }
@@ -48,6 +148,14 @@ window.addEventListener("keydown", (e) => {
         if(player.x < canvas.width - player.width - 10){
             player.x += 10;
         }
+    }else if(e.key === "ArrowDown"){
+        if(player.y < canvas.height - player.height - 10){
+            player.y += 10;
+        }
+    }else if(e.key === "ArrowUp"){
+        if(player.y > 10){
+            player.y -= 10;
+        }
     } else if(e.code === "Space"){
         tryShoot();
 
@@ -62,6 +170,7 @@ function update() {
     for(let i = bullets.length - 1; i >= 0; i--){
         const bullet = bullets[i];
         bullet.y += bullet.vy; 
+        bullet.x += bullet.vx;
         if(bullet.y < 0){
             bullets.splice(i, 1); 
         }
